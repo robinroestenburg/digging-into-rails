@@ -1,0 +1,7 @@
+source :rubygems
+
+gem 'pg'
+gem 'activesupport', :path => '~/Playground/rails/activesupport'
+gem 'activemodel',   :path => '~/Playground/rails/activemodel'
+gem 'activerecord',  :path => '~/Playground/rails/activerecord'
+
