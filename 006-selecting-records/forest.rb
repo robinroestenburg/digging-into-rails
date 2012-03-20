@@ -15,9 +15,11 @@ ActiveRecord::Model.establish_connection(
 forest = Forest.new(name: 'Rothrock')
 
 # Create a couple of trees, for more types check: http://www.tree-pictures.com/tree_types.html
-forest.trees << Tree.new(type: 'Cucumbertree')
-forest.trees << Tree.new(type: 'Red Pine')
-forest.trees << Tree.new(type: 'Black-Toothed Willow')
+forest.trees << Tree.new(species: 'Cucumbertree')
+forest.trees << Tree.new(species: 'Red Pine')
+forest.trees << Tree.new(species: 'Black-Toothed Willow')
 
 forest.save
 
+puts Tree.find(:all, :conditions => ['species = ?', 'Red Pine']).inspect
+puts Tree.where(['species = ?', 'Red Pine']).inspect
